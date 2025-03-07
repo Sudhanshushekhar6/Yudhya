@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevni</title>
+    <link rel="icon" href="./static/images/heart-pulse-solid.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./static/css/style.css">
+    <style>
+        .prediction-form {
+            flex: 1 1 45rem;
+            text-align: center;
+            padding: 2rem;
+            border-radius: .5rem;
+        }
+
+        .prediction-form .box {
+            width: 100%;
+            margin: .7rem 0;
+            border-radius: .5rem;
+            border: var(--border);
+            font-size: 1.6rem;
+            color: var(--black);
+            text-transform: none;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="{{url_for('index')}}" class="logo"><i class="fas fa-heartbeat"></i> Jeevni</a>
+        <nav class="navbar">
+            {% if username %}
+            <a href="{{url_for('index')}}#home">Home</a>
+            <a href="{{url_for('index')}}#services">services</a>
+            <a href="{{url_for('index')}}#book">Book</a>
+            <a href="{{url_for('index')}}#scans">Scans</a>
+            <a href="{{url_for('index')}}#blogs">Blogs</a>
+            <a href="{{url_for('index')}}#about">about</a>
+            <a href="{{url_for('profile')}}"><span class="fas fa-user"></span></a>
+            {% else %}
+            <a href="{{url_for('login')}}">Login</a>
+            {% endif %}
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+    <h1 class="heading" style="margin-bottom: -10rem; margin-top: 8rem;"> <span>DentoCare AI</span> Chatbot</h1>
+    <section class="book" id="book">
+
+        <div class="glass-row" style="margin-top:100px;">
+            <div class="prediction-form">
+                <a href="{{url_for('index')}}" class="logo"><i class="fas fa-heartbeat"></i> Jeevni</a><br><br>
+
+                <div class="box" style="border: none;">
+                    <div class="chatbot-container">
+                        <div class="chat-log" id="chatLog"></div>
+                        <div class="input-container">
+                            <input type="text" id="userInput" placeholder="Type your answer..." class="box">
+                            <button id="sendButton" class="btn">Send</button>
+                        </div>
+                    </div>
+                <p style="color: white; font-size: 1.3rem; margin-top: 2rem;">By continuing, you agree to Jeevni's
+                    <a style="color: #16a085;" href="{{url_for('policy')}}">Terms of Service</a> Opens a new tab and
+                    acknowledge you've read our Privacy
+                    Policy. Notice at collection.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="{{url_for('index')}}#home"><i class="fas fa-chevron-right"></i> home</a>
+                <a href="{{url_for('index')}}#services"><i class="fas fa-chevron-right"></i> services</a>
+                <a href="{{url_for('index')}}#book"><i class="fas fa-chevron-right"></i>book</a>
+                <a href="{{url_for('index')}}#scans"><i class="fas fa-chevron-right"></i> scans</a>
+                <a href="{{url_for('index')}}#blogs"><i class="fas fa-chevron-right"></i> blogs</a>
+                <a href="{{url_for('index')}}#about"><i class="fas fa-chevron-right"></i> about</a>
+
+
+            </div>
+            <div class="box">
+                <h3>our services </h3>
+                <a href="{{url_for('index')}}#book"><i class="fas fa-chevron-right"></i> Book Appointment</a>
+                <a href="{{url_for('index')}}#services"><i class="fas fa-chevron-right"></i> Chat with Doc</a>
+                <a href="{{url_for('index')}}#services"><i class="fas fa-chevron-right"></i> Mental Health</a>
+                <a href="{{url_for('index')}}#services"><i class="fas fa-chevron-right"></i> Chatbot</a>
+                <a href="{{url_for('index')}}#scans"><i class="fas fa-chevron-right"></i> Scans</a>
+                <a href="{{url_for('index')}}#blogs"><i class="fas fa-chevron-right"></i> Blogs</a>
+
+
+            </div>
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="" class="disabled"><i class="fas fa-phone"></i>+91 9570455641</a>
+                <a href="" class="disabled"><i class="fas fa-phone"></i> +91 9905156299</a>
+                <a href="mailto:21051302@kiit.ac.in"><i class="fas fa-envelope"></i>kumarsudhanshu994@gmail.com</a>
+                <a href="mailto:21051706@kiit.ac.in"><i class="fas fa-envelope"></i>raushan0785@gmail.com</a>
+                <a href="" class="disabled"><i class="fas fa-map-marker-alt"></i>Kerala, INDIA</a>
+            </div>
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="https://www.linkedin.com/in/sudhanshu-kumar-a9bb36268/"><i class="fab fa-linkedin"></i>Linkedin</a>
+                <a href="https://www.linkedin.com/in/raushan-kumar-46a03b257/"><i
+                        class="fab fa-linkedin"></i>Linkedin</a>
+            <a href="https://github.com/Sudhanshushekhar6"><i class="fab fa-github"></i>Github</a>
+                <a href="https://github.com/raushan0785"><i class="fab fa-github"></i>Github</a>
+            </div>
+        </div>
+
+        <div class="credit">made with 💚 | Jeevni @ 2025</div>
+    </section>
+    <script src="./static/js/script.js"></script>
+    <script>
+        const chatLog = document.getElementById("chatLog");
+            const userInput = document.getElementById("userInput");
+            const sendButton = document.getElementById("sendButton");
+
+            const questions = [
+           "Do you have mild to moderate tooth sensitivity when consuming hot or cold foods?",  
+"Are your gums bleeding slightly while brushing or flossing (but not excessively)?",  
+"Do you have occasional bad breath despite brushing and using mouthwash?",  
+"Do you feel minor discomfort in your jaw or teeth that comes and goes?",  
+"Have you noticed a slight change in tooth color or minor staining?",  
+"Do you have a small canker sore or mouth ulcer that hasn’t healed in a few days?",  
+"Do you experience mild gum swelling but no severe pain or pus?",  
+"Do you occasionally feel slight pain when chewing hard foods, but it’s manageable?",  
+"Is your wisdom tooth area slightly sore but not swollen or infected?",  
+"Do you feel mild discomfort due to food stuck between your teeth, but it goes away after flossing?"
+
+
+            ];
+
+            let currentQuestion = 0;
+            let noCount = 0;
+
+            function generateChatBubble(text, isUser) {
+                const chatBubble = document.createElement("div");
+                chatBubble.classList.add("chat-bubble");
+                chatBubble.classList.add(isUser ? "user" : "bot");
+                chatBubble.innerText = text;
+                chatLog.appendChild(chatBubble);
+                chatLog.scrollTop = chatLog.scrollHeight;
+            }
+
+            function askQuestion() {
+                generateChatBubble(questions[currentQuestion], false);
+                currentQuestion++;
+            }
+
+            function processUserInput() {
+                const answer = userInput.value;
+                generateChatBubble(answer, true);
+
+                if (answer.toLowerCase() === "yes") {
+                    noCount++;
+                }
+
+                if (currentQuestion < questions.length) {
+                    askQuestion();
+                } else {
+                    if (noCount > 5) {
+                        alert("It is recommended that you consult a dentist.");
+                    } else {
+    generateChatBubble("No need to visit the dentist! Try the following home remedies:\n\n" +
+        "• Use saltwater rinses for minor gum irritation.\n" +
+        "• Apply clove oil for mild tooth sensitivity.\n" +
+        "• Use baking soda or activated charcoal to reduce minor staining.\n" +
+        "• Try aloe vera gel for small mouth ulcers.\n" +
+        "• Use a soft-bristle toothbrush to reduce gum bleeding.", false);
+}
+
+                    userInput.disabled = true;
+                    sendButton.disabled = true;
+                } 
+
+                userInput.value = "";
+            }
+
+            askQuestion();
+            sendButton.addEventListener("click", processUserInput);
+            userInput.addEventListener("keyup", function (event) {
+                if (event.key === "Enter") {
+                    processUserInput();
+                }
+            });
+
+    </script>
+</body>
+
+</html>

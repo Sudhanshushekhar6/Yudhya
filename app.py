@@ -47,9 +47,9 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Change if using Outlook or anoth
 app.config['MAIL_PORT'] = 587  # Use 465 for SSL
 app.config['MAIL_USE_TLS'] = True  # Set to False if using SSL (MAIL_USE_SSL=True)
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'kumarchandansingh2004@gmail.com'  # Ensure this is your correct email
-app.config['MAIL_PASSWORD'] = 'tlkr otiv fsmz wibx'  # Use an app-specific password, not your real password
-app.config['MAIL_DEFAULT_SENDER'] = 'kumarchandansingh2004@gmail.com'  # This must match MAIL_USERNAME
+app.config['MAIL_USERNAME'] = 'your_mail_id'  # Ensure this is your correct email
+app.config['MAIL_PASSWORD'] = 'your_app_paass'  # Use an app-specific password, not your real password
+app.config['MAIL_DEFAULT_SENDER'] = 'your_mail_id'  # This must match MAIL_USERNAME
 
 mail = Mail(app)
 def send_mail(subject, recipient, body):
